@@ -1,0 +1,18 @@
+{
+     "android": {
+         "debug": {
+             "keystore": "FilmTrade.keystore",
+             "storePassword": "Filmtrade1324$",
+             "alias": "Filmtrade",
+             "password" : "Filmtrade1324$",
+             "keystoreType": ""
+         },
+         "release": {
+             "keystore": "FilmTrade.keystore",
+             "storePassword": "Filmtrade1324$",
+             "alias": "Filmtrade",
+             "password" : "Filmtrade1324$",
+             "keystoreType": ""
+         }
+     }
+ }

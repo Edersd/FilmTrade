@@ -1,0 +1,7 @@
+{
+  "name": "filmTradeA",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
