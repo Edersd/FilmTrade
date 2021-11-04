@@ -1,0 +1,796 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>filmtrade documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">filmtrade documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>NotificationsWorkPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/pages/notifications-work/notifications-work.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>page-notifications-work</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>notifications-work.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#navCtrl">navCtrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#navParams">navParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#notifications">notifications</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#accept">accept</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#delete">delete</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(navCtrl: NavController, navParams: NavParams, alertCtrl: AlertController)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/pages/notifications-work/notifications-work.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Contructor of the class</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>navCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>NavController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>NavController</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>navParams</td>
+                                                  
+                                                        <td>
+                                                                    <code>NavParams</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>NavParams</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>alertCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>AlertController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>AlertController</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="accept"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            accept
+                            </b>
+                            <a href="#accept"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>accept(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/pages/notifications-work/notifications-work.ts:72</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Function to accept projects</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>i</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Index of notificacion</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delete"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            delete
+                            </b>
+                            <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>delete(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/pages/notifications-work/notifications-work.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Delete the notification from list</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>i</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Index of notification to delete</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="navCtrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            navCtrl
+                            </b>
+                            <a href="#navCtrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>navCtrl:     <code>NavController</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>NavController</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/pages/notifications-work/notifications-work.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>NavController</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="navParams"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            navParams
+                            </b>
+                            <a href="#navParams"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>navParams:     <code>NavParams</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>NavParams</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/pages/notifications-work/notifications-work.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>NavParams</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notifications"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            notifications
+                            </b>
+                            <a href="#notifications"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>notifications:     <code><a href="../interfaces/Notification.html" target="_self" >Array&lt;Notification&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Notification.html" target="_self" >Array&lt;Notification&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      img: &#x27;../../assets/imgs/foto_not.png&#x27;,
+      projectName: &#x27;Pepsico Photoshot&#x27;,
+      userName: &#x27;Enrique&#x27;,
+      companyPosition: &#x27;Ceo Pepsi&#x27;,
+      description: &#x27;View description&#x27;,
+      note: &#x27;5.0&#x27;
+    },
+    {
+      img: &#x27;../../assets/imgs/foto_not.png&#x27;,
+      projectName: &#x27;Sabritas campaña&#x27;,
+      userName: &#x27;Ana&#x27;,
+      companyPosition: &#x27;Producer&#x27;,
+      description: &#x27;View description&#x27;,
+      note: &#x27;4.0&#x27;
+    }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/pages/notifications-work/notifications-work.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ViewChild } from &#x27;@angular/core&#x27;;
+import { IonicPage, NavController, NavParams, Tabs, AlertController } from &#x27;ionic-angular&#x27;;
+
+export interface Notification{
+  img?:string;
+  projectName?:string;
+  userName?:string;
+  companyPosition?:string;
+  description?:string;
+  note?:string;
+}
+
+@IonicPage()
+@Component({
+  selector: &#x27;page-notifications-work&#x27;,
+  templateUrl: &#x27;notifications-work.html&#x27;,
+})
+export class NotificationsWorkPage {
+  private notifications:Array&lt;Notification&gt; &#x3D; [
+    {
+      img: &#x27;../../assets/imgs/foto_not.png&#x27;,
+      projectName: &#x27;Pepsico Photoshot&#x27;,
+      userName: &#x27;Enrique&#x27;,
+      companyPosition: &#x27;Ceo Pepsi&#x27;,
+      description: &#x27;View description&#x27;,
+      note: &#x27;5.0&#x27;
+    },
+    {
+      img: &#x27;../../assets/imgs/foto_not.png&#x27;,
+      projectName: &#x27;Sabritas campaña&#x27;,
+      userName: &#x27;Ana&#x27;,
+      companyPosition: &#x27;Producer&#x27;,
+      description: &#x27;View description&#x27;,
+      note: &#x27;4.0&#x27;
+    }
+  ]
+  /**
+   * Contructor of the class
+   * @param navCtrl   NavController
+   * @param navParams NavParams
+   * @param alertCtrl AlertController
+   */
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  }
+
+  /**
+   * Delete the notification from list
+   * @param i Index of notification to delete
+   */
+  private delete(i:number):void {
+    let alert &#x3D; this.alertCtrl.create({
+      title: &#x27;Are you sure to delete this notification?&#x27;,
+      buttons: [
+        {
+          role: &#x27;cancel&#x27;,
+          text: &#x27;Cancel&#x27;
+        },
+        {
+          text: &#x27;Ok&#x27;,
+          handler: () &#x3D;&gt; {
+            this.notifications.splice(i, 1);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  /**
+   * Function to accept projects
+   * @param i Index of notificacion
+   */
+  private accept(i:number):void {
+
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+
+  &lt;ion-navbar&gt;
+    &lt;button ion-button menuToggle&gt;
+      &lt;ion-icon name&#x3D;&quot;menu&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/button&gt;
+    &lt;ion-title&gt;Notifications&lt;/ion-title&gt;
+  &lt;/ion-navbar&gt;
+
+&lt;/ion-header&gt;
+
+
+&lt;ion-content&gt;
+  &lt;div class&#x3D;&quot;seccion&quot;&gt;
+    &lt;h1 no-margin&gt;&lt;b&gt;Notifications&lt;/b&gt;&lt;/h1&gt;
+    &lt;p no-margin&gt;Check on the artist that accepted your invitation&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;list-avatar-page&quot;&gt;
+    &lt;ion-list&gt;
+      &lt;ion-item-sliding *ngFor&#x3D;&quot;let notification of notifications; let i &#x3D; index&quot;&gt;
+        &lt;ion-item&gt;
+          &lt;ion-avatar item-start&gt;
+            &lt;img [src]&#x3D;&quot;notification.img&quot;&gt;
+          &lt;/ion-avatar&gt;
+          &lt;h6&gt;&lt;b&gt;{{ notification.projectName }}&lt;/b&gt;&lt;/h6&gt;
+          &lt;p text-uppercase&gt;{{ notification.userName }} |&lt;/p&gt;
+          &lt;p text-uppercase&gt;{{ notification.companyPosition }} |&lt;/p&gt;
+          &lt;p text-uppercase&gt;{{ notification.description }}&lt;/p&gt;
+          &lt;ion-note item-end&gt;
+            &lt;ion-icon color&#x3D;&quot;using&quot; name&#x3D;&#x27;heart-outline&#x27;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-note&gt;
+          &lt;ion-note item-end&gt;
+            &lt;ion-icon name&#x3D;&#x27;star&#x27;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-note&gt;
+          &lt;ion-note item-end&gt;{{ notification.note }}&lt;/ion-note&gt;
+        &lt;/ion-item&gt;
+        &lt;ion-item-options side&#x3D;&quot;left&quot;&gt;
+          &lt;button ion-button (click)&#x3D;&quot;delete(i)&quot; color&#x3D;&quot;danger&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;md-close&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/button&gt;
+        &lt;/ion-item-options&gt;
+        &lt;ion-item-options side&#x3D;&quot;right&quot;&gt;
+          &lt;button ion-button (click)&#x3D;&quot;accept(i)&quot; color&#x3D;&quot;secondary&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;md-checkmark&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/button&gt;
+        &lt;/ion-item-options&gt;
+      &lt;/ion-item-sliding&gt;
+    &lt;/ion-list&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-navbar>    <button ion-button menuToggle>      <ion-icon name="menu"></ion-icon>    </button>    <ion-title>Notifications</ion-title>  </ion-navbar></ion-header><ion-content>  <div class="seccion">    <h1 no-margin><b>Notifications</b></h1>    <p no-margin>Check on the artist that accepted your invitation</p>  </div>  <div class="list-avatar-page">    <ion-list>      <ion-item-sliding *ngFor="let notification of notifications; let i = index">        <ion-item>          <ion-avatar item-start>            <img [src]="notification.img">          </ion-avatar>          <h6><b>{{ notification.projectName }}</b></h6>          <p text-uppercase>{{ notification.userName }} |</p>          <p text-uppercase>{{ notification.companyPosition }} |</p>          <p text-uppercase>{{ notification.description }}</p>          <ion-note item-end>            <ion-icon color="using" name=\'heart-outline\'></ion-icon>          </ion-note>          <ion-note item-end>            <ion-icon name=\'star\'></ion-icon>          </ion-note>          <ion-note item-end>{{ notification.note }}</ion-note>        </ion-item>        <ion-item-options side="left">          <button ion-button (click)="delete(i)" color="danger">            <ion-icon name="md-close"></ion-icon>          </button>        </ion-item-options>        <ion-item-options side="right">          <button ion-button (click)="accept(i)" color="secondary">            <ion-icon name="md-checkmark"></ion-icon>          </button>        </ion-item-options>      </ion-item-sliding>    </ion-list>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutFtPage', 'selector': 'page-about-ft'},{'name': 'AddProjectPage', 'selector': 'page-add-project'},{'name': 'CategoryHirePage', 'selector': 'page-category-hire'},{'name': 'ChatListPage', 'selector': 'page-chat-list'},{'name': 'DashboardTabsPage', 'selector': 'page-dashboard-tabs'},{'name': 'EditInfoHirePage', 'selector': 'page-edit-info-hire'},{'name': 'EditInfoPage', 'selector': 'page-edit-info'},{'name': 'HomePage', 'selector': 'page-home'},{'name': 'IdVerificationPage', 'selector': 'page-id-verification'},{'name': 'LinkedAccountsPage', 'selector': 'page-linked-accounts'},{'name': 'ListProfilesPage', 'selector': 'page-list-profiles'},{'name': 'ListsTabsPage', 'selector': 'page-lists-tabs'},{'name': 'MenuHomePage', 'selector': 'page-menu-home'},{'name': 'ModalAcceptedRequestPage', 'selector': 'page-modal-accepted-request'},{'name': 'ModalAddProjectsPage', 'selector': 'page-modal-add-projects'},{'name': 'ModalBadQualificationPage', 'selector': 'page-modal-bad-qualification'},{'name': 'ModalCompletedWorkPage', 'selector': 'page-modal-completed-work'},{'name': 'ModalDetailRequestPage', 'selector': 'page-modal-detail-request'},{'name': 'ModalExtraHourPage', 'selector': 'page-modal-extra-hour'},{'name': 'ModalFinishProjectPage', 'selector': 'page-modal-finish-project'},{'name': 'ModalOthersPage', 'selector': 'page-modal-others'},{'name': 'ModalProcessingDataPage', 'selector': 'page-modal-processing-data'},{'name': 'ModalQualifyFreelancePage', 'selector': 'page-modal-qualify-freelance'},{'name': 'ModalRequestSendPage', 'selector': 'page-modal-request-send'},{'name': 'MyApp', 'selector': ''},{'name': 'NoTabsPage', 'selector': 'page-no-tabs'},{'name': 'NotificationsWorkPage', 'selector': 'page-notifications-work'},{'name': 'PaymentsPage', 'selector': 'page-payments'},{'name': 'PerfilWorkPage', 'selector': 'page-perfil-work'},{'name': 'PortfolioWorkPage', 'selector': 'page-portfolio-work'},{'name': 'ProfileWorkPage', 'selector': 'page-profile-work'},{'name': 'RegisterPage', 'selector': 'page-register'},{'name': 'SelectPakageWorkPage', 'selector': 'page-select-pakage-work'},{'name': 'SelectRegisterPage', 'selector': 'page-select-register'},{'name': 'SetingsPage', 'selector': 'page-setings'},{'name': 'SplashHirePage', 'selector': 'page-splash-hire'},{'name': 'SuportHelpPage', 'selector': 'page-suport-help'},{'name': 'TabsPage', 'selector': 'page-tabs'},{'name': 'TermsConditionsPage', 'selector': 'page-terms-conditions'},{'name': 'YourProjectsPage', 'selector': 'page-your-projects'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NotificationsWorkPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NotificationsWorkPage.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
