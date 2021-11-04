@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ sesionObject.nombre }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="seccionPerfil">
+  </div>
+  <img class="img" [src]="(sesionObject.foto != null && sesionObject.foto != undefined)?sesionObject.foto:'../../assets/imgs/logo.png'" />
+  <ion-grid>
+    <h4 text-center>{{ sesionObject.nombre }}</h4>
+    <b text-center>
+      <div [ngSwitch]="sesionObject.ocupation">
+        <h1 *ngSwitchCase="'Photographer'">{{sesionObject.ocupation}}</h1>
+        <h1 *ngSwitchCase="'Videographer'">Videographer</h1>
+        <h1 *ngSwitchCase="'Hair'">Hair & Makeup</h1>
+        <h1 *ngSwitchCase="'Talent'">Talent</h1>
+      </div>
+
+    </b>
+    <ion-row align-items-center justify-content-center>
+      <ion-col col-auto align-self-center text-center>
+        <p *ngIf="sesionObject.terminados != null"><b>{{ sesionObject.terminados }} jobs</b></p>
+        <p *ngIf="sesionObject.terminados == null"><b>0 jobs</b></p>
+        <p text-uppercase>Completed</p>
+      </ion-col>
+      <ion-col col-auto offset-1>
+        <ion-avatar item-start>
+          <img class="imgStart" src=" ../../assets/icon/favorito.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-auto>
+        <h5><b>{{ sesionObject.calificacion }}</b></h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid padding style="background: ghostwhite;">
+    <ion-card>
+      <ion-card-header no-padding no-margin>
+        <ion-row no-padding no-margin>
+          <ion-col align-self-center text-center>
+            Available days
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+
+      <ion-card-content text-center>
+        <button ion-button color="{{(sesionObject.ocupation == 'Photographer')?'photographer':((sesionObject.ocupation == 'Videographer')?'videographer':((sesionObject.ocupation == 'Hair')?'makeup':'transparent'))}}"
+          large text-center text-wrap padding (click)="presentActionSheet()" style="text-transform: none;">Add or
+          change the days you
+          are
+          available</button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="(sesionObject.galeria != null && sesionObject.galeria != undefined)">
+      <ion-card-header no-padding no-margin>
+        <ion-row no-padding no-margin>
+          <ion-col align-self-center text-center>
+            Galery
+          </ion-col>
+          <ion-col col-auto align-self-center text-center>
+            <button ion-button clear color="using" no-margin no-padding padding-right (click)="openPortfolioPage()">
+              <ion-icon name='brush'></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+
+      <ion-card-content >
+        <ion-slides class="image-slider" loop="true" slidesPerView="2" >
+          <ion-slide *ngFor="let img of sesionObject.galeria; let i = index" align-content="align-self-center">
+
+            <div *ngIf=" !img.includes('.mp4') ;else showVideo">
+              <img [src]="img" class="thumb-img" #myImage (click)="presentImage(myImage)">
+            </div>
+
+            <ng-template #showVideo>
+              <div class="thumb-img">
+                  <video controls="true" width='100%' height='100%' [src]="img" type='video/mp4'></video>
+              </div>
+            </ng-template>
+
+          </ion-slide>
+        </ion-slides>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header no-padding no-margin (click)="change(0)">
+        <ion-row no-padding no-margin>
+          <ion-col align-self-center text-center>
+            Packages
+          </ion-col>
+          <ion-col col-auto align-self-center text-center>
+            <button ion-button clear color="using" no-margin no-padding padding-right (click)="openPackagePage()">
+              <ion-icon name='brush'></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+
+      <ion-card-content text-center>
+        <ion-grid no-padding>
+          <ion-row justify-content-center align-items-center>
+            <ion-col *ngIf="sesionObject.basic != 0" col-4 (click)="change(1)">
+              <p ion-text color="using"><b>${{ sesionObject.basic }}</b></p>
+              <p ion-text color="usingg">Basic</p>
+              <p ion-text color="dark">3 hrs</p>
+            </ion-col>
+            <ion-col *ngIf="sesionObject.gold != 0" col-4 (click)="change(2)">
+              <p ion-text color="using"><b>${{ sesionObject.gold }}</b></p>
+              <p ion-text color="usingg">Gold</p>
+              <p ion-text color="dark">5 hrs</p>
+            </ion-col>
+            <ion-col *ngIf="sesionObject.premium != 0" col-4 (click)="change(3)">
+              <p ion-text color="using"><b>${{ sesionObject.premium }}</b></p>
+              <p ion-text color="usingg">Premium</p>
+              <p ion-text color="dark">8 hrs</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- <button ion-button full color="light" style="color: orange">Your projects</button>
+    <button ion-button full color="light" style="color: orange">Discover other freelance work's</button> -->
+
+
+  </ion-grid>
+  <!-- <ion-fab right bottom>
+    <button ion-fab color="primary">
+      <ion-icon name="mail"></ion-icon>
+    </button>
+    <ion-fab-list side="left">
+      <button ion-fab>
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon name="logo-twitter"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon name="logo-googleplus"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab> -->
+</ion-content>
+<ion-footer>
+  <footer-tabs></footer-tabs>
+</ion-footer>

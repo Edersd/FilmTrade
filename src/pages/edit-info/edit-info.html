@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar no-padding>
+    <ion-grid *ngIf="edit">
+      <ion-row>
+        <ion-col col-6 class="colNav">
+          <h1>Step 2</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="!edit">
+      <ion-row>
+
+      </ion-row>
+    </ion-grid>
+    <h3 class="ion-title"></h3>
+  </ion-toolbar>
+  <div *ngIf="edit">
+    <img *ngIf="(sesionObject.photoUri != null && sesionObject.photoUri != undefined)" class="img" (click)="changePhoto(1)"
+      [src]="sesionObject.photoUri">
+    <img *ngIf="(sesionObject.photoUri == null && sesionObject.photoUri == undefined)" (click)="changePhoto()" class="plus img"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTBoLTEwdi0xMGgtNHYxMGgtMTB2NGgxMHYxMGg0di0xMGgxMHoiLz48L3N2Zz4=">
+  </div>
+  <div *ngIf="!edit">
+    <img *ngIf="(sesionObject.photoUri != null && sesionObject.photoUri != undefined)" class="img2" (click)="changePhoto(1)"
+      [src]="sesionObject.photoUri">
+    <img *ngIf="(sesionObject.photoUri == null && sesionObject.photoUri == undefined)" (click)="changePhoto()" class="plus img2"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTBoLTEwdi0xMGgtNHYxMGgtMTB2NGgxMHYxMGg0di0xMGgxMHoiLz48L3N2Zz4=">
+  </div>
+
+
+  <div padding center center-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 margin-bottom>
+          <ion-item>
+            <ion-label floating>NAME</ion-label>
+            <ion-input type="text" [(ngModel)]="sesionObject.nombre"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6 center text-center no-padding>
+          <p no-margin>STATE</p>
+        </ion-col>
+        <ion-col col-6 center text-center no-padding>
+          <p no-margin>MUNICIPALITY</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label floating> </ion-label>
+            <ion-select (ionChange)="changeState($event)" interface="popover" placeholder="Select one">
+              <ion-option *ngFor="let stateIn of statesList" [value]="stateIn">{{ stateIn.descripcion }}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label floating> </ion-label>
+            <ion-select (ionChange)="changeRegion($event)" interface="popover" placeholder="Select one">
+              <ion-option *ngFor="let region of regionsList" [value]="region">{{ region }}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row align-items-end>
+        <ion-col align-self-end>
+          <ion-item>
+            <h2>OCCUPATION</h2>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="edit">
+        <ion-col>
+          <ion-card *ngFor="let occupation of occupations" (click)="changeOcupation(occupation)">
+            <ion-card-content no-padding>
+              <ion-card-title text-center>
+                {{occupation.title}}
+              </ion-card-title>
+            </ion-card-content>
+            <hr class="linea" [ngStyle]="{'background': occupation.color}">
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="!edit">
+        <ion-col>
+          <ion-card *ngFor="let occupationedi of occupationsEdit">
+            <ion-card-content no-padding>
+              <ion-card-title text-center>
+                {{occupationedi.title}}
+              </ion-card-title>
+            </ion-card-content>
+            <hr class="linea" [ngStyle]="{'background': occupationedi.color}">
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button *ngIf="!edit" style="margin-left:15px; background:transparent; color: gray; font-size:15px" (click)="openPackagePage()" ><b>Edit your packages</b></button>
+    <button *ngIf="!edit" color="dark" text-capitalize text-center full ion-button clear (click)="updateInfo()" ><b>Next</b></button>
+  </div>
+</ion-content>

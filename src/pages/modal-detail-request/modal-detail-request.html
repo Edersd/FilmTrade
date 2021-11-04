@@ -1,0 +1,41 @@
+<ion-content class=" no-scroll" no-padding no-margin>
+  <div class="img_h no-scroll">
+    <ion-buttons end>
+      <button ion-button icon-only clear color="dark" (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </div>
+  <div padding text-center>
+    <img [src]="(projectAdd.foto != null && projectAdd.foto != undefined)?projectAdd.foto:'../../assets/imgs/logo.png'"
+      class="img" />
+    <h1 ion-text>{{ projectAdd.nombre }}</h1>
+    <div [ngSwitch]="projectAdd.paquete">
+      <h6 text-uppercase ion-text color="usingg" *ngSwitchCase="1">Basic package</h6>
+      <h6 text-uppercase ion-text color="usingg" *ngSwitchCase="2">Gold package</h6>
+      <h6 text-uppercase ion-text color="usingg" *ngSwitchCase="3">Premium package</h6>
+    </div>
+    <p>{{ serviceDescription.days }} </p>
+    <p *ngIf="serviceDescription.days >= 2">days</p>
+    <p *ngIf="serviceDescription.days == 1">day</p>
+    <p> starting at {{serviceDescription.horai}} - {{serviceDescription.horaf}}</p>
+    <ion-grid>
+      <ion-row align-items-center justify-content-center>
+        <ion-col col-auto>
+          <p ion-text color="using">Total </p>
+          <p ion-text color="usingg">${{ costPor }}</p>
+        </ion-col>
+        <ion-col col-auto offset-2 text-right>
+          <ion-note item-end>
+            <ion-icon name='star' color="using"></ion-icon>
+          </ion-note>
+        </ion-col>
+        <ion-col col-auto>
+          <p ion-text color="dark">{{ projectAdd.calificacion }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <button ion-button full clear text-center color="dark" (click)="openModal()">Send Invitation</button>
+</ion-content>

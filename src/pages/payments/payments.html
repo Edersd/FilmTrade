@@ -1,0 +1,103 @@
+<!--
+  Generated template for the PaymentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Payments</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-toolbar no-padding>
+    <ion-grid *ngIf="edit">
+      <ion-row>
+        <ion-col col-3 class="colNav">
+          <h1>Step 1</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <h3 *ngIf="sesionObject.tipo_usuario == 2 || sesionObject.occupationType == 2" class="ion-title">My Wallet</h3>
+    <h6 *ngIf="sesionObject.tipo_usuario == 2 || sesionObject.occupationType == 2">add your bank accounts to recive your payments</h6>
+    <h3 *ngIf="sesionObject.tipo_usuario == 3 || sesionObject.occupationType == 3" class="ion-title">Payments</h3>
+    <h6 *ngIf="sesionObject.tipo_usuario == 3 || sesionObject.occupationType == 3">add a payment method</h6>
+  </ion-toolbar>
+  <ion-list padding no-lines>
+    <ion-item>
+      <h2>Transaction number</h2>
+    </ion-item>
+    <ion-item (click)="desplegarCard()">
+      <ion-thumbnail item-start>
+        <img src=" ../../assets/icon/visa.png">
+      </ion-thumbnail>
+      <h2>
+      </h2>
+      <button ion-button large clear item-end>
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item *ngIf="showComp">
+      <ion-thumbnail item-start>
+        <img src="../../assets/icon/visa.png">
+      </ion-thumbnail>
+      <h2>Card Number</h2>
+      <button ion-button large clear item-end (click)="scanCard()" >
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item *ngIf="showComp">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item>
+              <ion-item>
+                <ion-input type="text" [(ngModel)]="cardNumber" placeholder="Number" type="tel"></ion-input>
+              </ion-item>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 padding-left>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="month" placeholder="MM/ " type="tel"></ion-input>
+              <p><b>/</b></p>
+              <ion-input type="text" [(ngModel)]="year" placeholder="/YY" type="tel"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="cvv" placeholder="CVV" type="tel"></ion-input>
+              <span *ngIf="PATTERN_CVV.test(ccv)">Es valido</span>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item>
+              <ion-select (ionChange)="changeRegion($event)" interface="popover" placeholder="Select one">
+                <ion-option *ngFor="let region of regionsList" [value]="region">{{ region.region }}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-item>
+      <ion-card-io></ion-card-io>
+    </ion-item>
+    <ion-item>
+      <button color="dark" ion-button item-right clear (click)="enter()"><b>Ok</b></button>
+    </ion-item>
+  </ion-list>
+
+
+
+
+</ion-content>

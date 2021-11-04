@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar [color]="theme">
+    <ion-item [color]="theme">
+      <ion-avatar item-start>
+          <h6 *ngIf="sesionObject.tipo_usuario==2"> <img src="http://d-ies.com/FilmTrade/API/Media/{{ chat.guest[1].idGuest }}/Datos/3.jpg"></h6>
+          <h6 *ngIf="sesionObject.tipo_usuario==3"> <img src="http://d-ies.com/FilmTrade/API/Media/{{ chat.guest[0].idGuest }}/Datos/3.jpg"></h6>
+      </ion-avatar>
+      <h2>{{ (chat != undefined && chat != null)?chat.guest[(this.sesionObject.tipo_usuario === '2')?1:0].name:'' }}</h2>
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let message of messages | async">
+      <ion-col *ngIf="message.idGuest == chat.guest[(this.sesionObject.tipo_usuario === '2')?1:0].idGuest" col-9 class="message myMessage">
+        <div class="userNameChat">{{ chat.guest[(this.sesionObject.tipo_usuario === '2')?1:0].name.split('-')[0] }}</div>
+        <div>{{ message.message }}</div>
+        <div class="time">{{ message.date | date:'dd/MM hh:MM' }}</div>
+      </ion-col>
+      <ion-col *ngIf="message.idGuest == chat.guest[(this.sesionObject.tipo_usuario === '2')?0:1].idGuest" offset-3 col-9 class="message otherMessage">
+        <div class="userNameChat">{{ chat.guest[(this.sesionObject.tipo_usuario === '2')?0:1].name.split('-')[0] }}</div>
+        <div>{{ message.message }}</div>
+        <div class="time">{{ message.date | date:'dd/MM hh:MM' }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-label>Message</ion-label>
+    <ion-input type="text" [(ngModel)]="newMessage"></ion-input>
+    <button (click)="sendMessage()" [disabled]="(newMessage == undefined || newMessage == null || newMessage == '')" item-right ion-button icon-only clear><ion-icon name="md-send"></ion-icon></button>
+  </ion-item>
+</ion-footer>

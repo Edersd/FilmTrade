@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Chats</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="seccion">
+    <h1 no-margin><b>Chats</b></h1>
+    <p no-margin>Get in touch with clients</p>
+  </div>
+
+  <div class="list-avatar-page">
+    <ion-list>
+      <ion-item *ngFor="let chat of chats | async" (click)="openChat(chat)">
+        <ion-avatar item-start>
+            <h6 *ngIf="sesionObject.tipo_usuario==2"> <img src="http://d-ies.com/FilmTrade/API/Media/{{ chat.guest[1].idGuest }}/Datos/3.jpg"></h6>
+            <h6 *ngIf="sesionObject.tipo_usuario==3"> <img src="http://d-ies.com/FilmTrade/API/Media/{{ chat.guest[0].idGuest }}/Datos/3.jpg"></h6>
+        </ion-avatar>
+        <h6 *ngIf="sesionObject.tipo_usuario==2"><b>{{ chat.guest[1].name }}</b></h6>
+        <h6 *ngIf="sesionObject.tipo_usuario==3"><b>{{ chat.guest[0].name }}</b></h6>
+      </ion-item>
+    </ion-list>
+  </div>
+  <p text-center ion-text color="usingg">Chats will be deleted after finishing each project</p>
+</ion-content>
+<ion-footer>
+  <footer-tabs *ngIf="sesionObject.tipo_usuario==2"></footer-tabs>
+  <footer-tabs-hire *ngIf="sesionObject.tipo_usuario==3"></footer-tabs-hire>
+</ion-footer>

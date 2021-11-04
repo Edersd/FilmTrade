@@ -1,0 +1,47 @@
+page-modal-others {
+  /* Modal */
+  background-color: rgba(0, 0, 0, 0.3);
+
+  ion-content.content {
+    left: calc(50% - (80%/2));
+    top: calc(50% - (45%/2));
+
+    width: 80%;
+    height: 45%;
+    border-radius: 20px;
+
+    .scroll-content {
+      border-radius: 20px;
+      overflow: auto;
+    }
+  }
+
+  @media only screen and (min-height: 768px) and (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+
+  /* Card */
+  ion-content {
+    font-size: 40px;
+  }
+
+  .card {
+    border-radius: 10px;
+    margin: 0px;
+    width: 100%;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.0);
+  }
+
+  ion-textarea {
+    height: 150px;
+    background: rgb(243, 243, 243);
+    border-radius: 15px;
+    height: 150px;
+    padding: 10px;
+  }
+
+  button {
+    font-weight: bold;
+  }
+}

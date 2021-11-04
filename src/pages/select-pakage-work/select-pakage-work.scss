@@ -1,0 +1,71 @@
+page-select-pakage-work {
+  .scroll-content {
+    border-top: 6px solid rgb(25, 111, 211);
+  }
+
+  .colNav {
+    border-bottom: 6px solid rgb(25, 111, 211);
+  }
+
+  input[type='number'] {
+    -moz-appearance:textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .seccion {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    background: rgba(253, 253, 253, 0.883);
+    -webkit-box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.18);
+    p {
+      font-size: 13px;
+      padding-top: 3px;
+      padding-left: 0px;
+      margin: 0;
+      color: gray;
+      padding-top: 10px;
+    }
+  }
+
+  .ion-title {
+    padding: 0 30px;
+    font-size: 30px;
+    color: black;
+    margin-top: 5px;
+  }
+
+  h6 {
+    padding-left: 30px;
+    padding-bottom: 16px;
+    font-size: 13px;
+    margin: auto;
+    font-style: inherit;
+    color: gray;
+  }
+
+  p {
+    font-size: 20px;
+    padding-left: 16px;
+    margin: 0;
+  }
+
+  .item {
+    background: transparent;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+
+
+}

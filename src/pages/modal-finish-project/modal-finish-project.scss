@@ -1,0 +1,71 @@
+page-modal-finish-project {
+
+  /* Div's */
+  .img_h {
+    background-image: url('../../assets/imgs/recuadro_completo3.png');
+    background-repeat: no-repeat;
+    height: 45%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .img_f {
+    height: 50px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  h1 {
+    //line-height: 150px; //Damos 200px de alto para notar el efectos 
+    padding-top: 35px;
+    font-size: 20px;
+  }
+
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+
+
+  /* Modal */
+  background-color: rgba(0, 0, 0, 0.3);
+
+  ion-content.content {
+    left: calc(50% - (80%/2));
+    top: calc(50% - (40%/2));
+
+    width: 80%;
+    height: 40%;
+    border-radius: 20px;
+
+    .scroll-content {
+      border-radius: 20px;
+      overflow: auto;
+    }
+  }
+
+  @media only screen and (min-height: 768px) and (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+
+  /* Imagen */
+  .img {
+    background: white;
+    top: 30%;
+    left: 50%;
+    margin-left: -50px;
+    position: absolute;
+    z-index: 999;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 8px solid white;
+  }
+
+  button {
+    font-weight: bold;
+  }
+}

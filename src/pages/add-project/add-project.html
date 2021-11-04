@@ -1,0 +1,109 @@
+<!--
+  Generated template for the AddProjectPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ perfilWork.ocupation}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background: ghostwhite;">
+  <form [formGroup]="loginForm">
+    <div>
+      <ion-label stacked>Project name</ion-label>
+      <ion-card no-padding>
+        <ion-card-content no-padding ftext-center>
+          <ion-item *ngIf="projecExis == null || showNew == true">
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="projecExis != null">
+            <ion-select (ionChange)="changeProject($event)" interface="popover" placeholder="Select one">
+              <ion-option *ngFor="let item of projecExis" [value]="item"> {{item.nombre}} </ion-option>
+            </ion-select>
+          </ion-item>
+          <p ion-text color="primary" padding-left (click)="showNewP()" *ngIf="projecExis != null"><a>+
+              Add new project</a></p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div padding-top *ngIf="projecExis == null || showNew == true">
+      <ion-label color="dark" stacked>Description</ion-label>
+      <ion-card style="height: 150px;">
+        <ion-card-content no-padding text-center>
+          <ion-item>
+            <ion-textarea formControlName="descripcion"></ion-textarea>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <p text-right ion-text color="usingg" style="margin: 4px;">Must*</p>
+    </div>
+  </form>
+
+  <div>
+    <ion-label padding-top color="dark" stacked>Package</ion-label>
+    <ion-card>
+      <ion-card-content text-center>
+        <ion-grid no-padding>
+          <!---->
+          <ion-row [ngSwitch]="plan">
+            <ion-col margin-top col-12 *ngSwitchCase="1">
+              <p ion-text text-uppercase color="using" *ngSwitchCase="1"><b>Basic</b></p>
+              <p ion-text text-uppercase color="using" *ngSwitchCase="1"><b>{{ dia1 }} {{ dia2 }} {{ mes }}</b></p>
+            </ion-col>
+            <ion-col col-auto align-self-center text-center>
+                <p><b></b></p>
+              </ion-col>
+          </ion-row>
+
+          <ion-row [ngSwitch]="plan">
+            <ion-col margin-top col-12 *ngSwitchCase="2">
+              <p ion-text text-uppercase color="using" *ngSwitchCase="2"><b>Gold</b></p>
+              <p ion-text text-uppercase color="using" *ngSwitchCase="2"><b>{{ dia1 }} {{ dia2 }} {{ mes }}</b></p>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row [ngSwitch]="plan">
+            <ion-col margin-top col-12 *ngSwitchCase="3">
+              <p ion-text text-uppercase color="using" *ngSwitchCase="3"><b>Premium</b></p>
+              <p ion-text text-uppercase color="using" *ngSwitchCase="3"><b>{{ dia1 }} {{ dia2 }} {{ mes }}</b></p>
+              <p ion-text color="usingg" *ngSwitchCase="3"></p>
+            </ion-col>
+            <!--
+            <ion-col col-6 *ngSwitchCase="3">
+                <img class="imgStart" src=" ../../assets/icon/icono-manzana.PNG" style="margin-left:35%" >
+              <p ion-text color="usingg" *ngSwitchCase="3">8 hr + 1 hr</p>
+              <p ion-text color="usingg" *ngSwitchCase="3">lunchtime</p>
+            </ion-col>
+            <ion-col col-6 *ngSwitchCase="3" (click)="extraHour(1)">
+              <ion-icon class="ion-iconAdd" color="usingg" ios="ios-time-outline" md="md-time"></ion-icon>
+              <p ion-text color="usingg">You take add</p>
+              <p ion-text color="usingg">1 extra hr</p>
+            </ion-col>
+          -->
+          </ion-row>
+          
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button full color="light" style="color: orange; " (click)="changePackage()">Change package</button>
+    <!--<p text-right ion-text color="using" style="margin: 4px;" (click)="changePackage()" >Change package</p>-->
+  </div>
+  <!--
+  <h5 style="margin-left: 5px">Calendar</h5>
+  <button color="dark" (click)="presentActionSheet()" style="background: transparent; font-size: 14px">
+    {{this.projectAdd.nombre}} it's available in these days, select the days you need the services  IT'S AVAILABLE IN THESE DAYS, SELECT THE DAYS YOU NEED THE SERVICES 
+  </button>
+  -->
+
+  <button ion-button full color="light" style="color: #000; ">
+    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts" (ionChange)="parseDate(event.timeStarts)"></ion-datetime>
+  </button>
+  <p text-center ion-text color="usingg" style="margin: 23px; " (click)="termConditios()" >Terms and conditions</p>
+  <button ion-button full clear color="dark" (click)="openModal()"><b>NEXT</b></button>
+
+</ion-content>

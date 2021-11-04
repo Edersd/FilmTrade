@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar no-padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-9 class="colNav">
+          <h1>Step 3</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <h3 class="ion-title"></h3>
+  </ion-toolbar>
+  <img *ngIf="(sesionObject.photoUri != null && sesionObject.photoUri != undefined)" class="img" [src]="sesionObject.photoUri" />
+  <img *ngIf="(sesionObject.photoUri == null && sesionObject.photoUri == undefined)" class="img" src="../../assets/imgs/logo.png" />
+
+  <div padding center center-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 margin-bottom>
+          <ion-card>
+            <ion-card-content no-padding>
+              <ion-card-title text-center>
+                <b>{{ occupation.title }}</b>
+              </ion-card-title>
+            </ion-card-content>
+            <hr class="linea" [ngStyle]="{'background': occupation.color}">
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <h5>What's your speciality?</h5>
+          <h5>Use tags to make your searching easier.</h5>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-12 margin-bottom>
+          <ion-card>
+            <ion-card-content no-padding text-center>
+              <ion-chip *ngFor="let tag of tagList" (click)="changeChipSelected(tag)" [ngStyle]="{'background': tag.color}">
+                <ion-label>{{ tag.name }}</ion-label>
+              </ion-chip>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+    <button ion-button full clear text-capitalize color="dark" (click)="next()"><b>Next</b></button>
+  </div>
+</ion-content>

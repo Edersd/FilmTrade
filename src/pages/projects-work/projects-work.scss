@@ -1,0 +1,91 @@
+page-projects-work {
+  .scroll-content {
+    border-top: 6px solid rgb(25, 111, 211);
+  }
+
+  .seccion {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    background: rgba(236, 236, 236, 0.883);
+    -webkit-box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.18);
+    border-top: 6px solid rgb(25, 111, 211);
+  }
+
+  .list-avatar-page {
+    ion-note {
+      font-size: 14px;
+      align-self: flex-start;
+    }
+
+    p {
+      display: inline;
+      font-size: 10px;
+      padding-top: 0px
+    }
+
+    b {
+      font-size: 17px;
+    }
+  }
+
+  .iconos {
+    ion-icon {
+      display: inline-block;
+      font-size: 1.8em;
+    }
+
+    p {
+      display: inline;
+      font-size: 13px;
+      padding-top: 0px
+    }
+
+    a {
+      font-size: 9px;
+    }
+  }
+
+  .item [item-start] {
+    margin: 8px 6px 8px 0px;
+  }
+
+  .item-ios [item-end] {
+    margin: 27px 6px 0px 0px;
+  }
+
+  .item-ios ion-avatar img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .list>.item-block:first-child {
+    border-top: 0.0px solid #c8c7cc;
+  }
+
+  .list>.item-block:last-child,
+  .list>.item-wrapper:last-child .item-block {
+    border-bottom: 0.0px solid #c8c7cc;
+  }
+
+  .list {
+    margin: -1px 0 0px;
+  }
+
+  .list .item-block .item-inner {
+    border-bottom: 0.0px solid #c8c7cc;
+  }
+
+  .label {
+    margin: 0px 0px 0px 0px;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+}

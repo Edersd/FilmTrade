@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ID Verification</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-toolbar no-padding>
+    <h3 paddig style="padding: 0 30px; font-size: 30px; color: black;" class="ion-title">ID Verification</h3>
+    <h6 style="padding-left: 30px;padding-bottom: 10px;font-size: 13px;margin: auto;font-style: inherit;color: gray;">Must
+      be answered</h6> 
+  </ion-toolbar>
+
+  <div padding class="ion-full">
+    <ion-grid class="ion-full">
+      <ion-row no-padding>
+        <form [formGroup]="idVerifyForm">
+          <ion-col no-padding>
+            <ion-item>
+              <ion-input placeholder="Verify your ID" clearInput formControlName="idVerify"></ion-input>
+            </ion-item>
+          </ion-col>
+        </form>
+
+        <ion-col col-1 align-self-center margin-right>
+          <ion-buttons end>
+            <button ion-button icon-only clear (click)="takePicture()">
+              <ion-icon name="camera"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
+      <ion-row no-padding>
+        <ion-col no-padding>
+          <p style="color: lightgray; margin: 0;padding: 0 15px;" class="gray">Needed information</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="picture != null">
+        <ion-col padding>
+          <p align="center"><img src="{{ picture }}"></p>
+          <!-- <img [src]="picture"> -->
+        </ion-col>
+      </ion-row>
+
+      <ion-row justify-content-end class="magin50">
+        <ion-col align-self-end col-auto>
+          <a style="margin-top: 15px">Are you foreigner?</a>
+        </ion-col>
+      </ion-row>
+
+      <ion-row justify-content-center>
+        <ion-col align-self-center>
+          <button ion-button full clear text-capitalize color="dark" (click)="openPayment()"><b>Next</b></button>
+          <!-- <button (click)="upload()" ion-button>Take Pic & Upload </button>
+          <button (click)="tabsFoto()" ion-button>TabsFoto </button> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

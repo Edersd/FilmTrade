@@ -1,0 +1,62 @@
+<!--
+  Generated template for the PortfolioWorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Portfolio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-toolbar no-padding>
+    <ion-grid *ngIf="edit">
+      <ion-row>
+        <ion-col col-11 class="colNav">
+          <h1>Step 4</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <h3 class="ion-title">Choose your work</h3>
+    <h6>10 photos or videos</h6>
+  </ion-toolbar>
+
+  <div padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let photo of photoList; let i = index" col-6>
+          <ion-card (click)="addPhoto()">
+            <ion-icon *ngIf="droping" (click)="dropMedia(i)" color="danger" name="md-close-circle"></ion-icon>
+
+            <div *ngIf=" !photo.includes('.mp4') ;else showVideo">
+              <img (press)="droping = !droping" [src]="photo" class="center-cropped" />
+            </div>
+
+            <ng-template #showVideo>
+              <div class="center-video" (press)="droping = !droping">
+                <video controls="true" width="100" height="127" [src]="photo" type='video/mp4'></video>
+              </div>
+            </ng-template>
+
+
+          </ion-card>
+        </ion-col>
+        <ion-col *ngIf="photoList.length < 10" col-6>
+          <ion-card (click)="addPhoto()">
+            <img class="plus" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTBoLTEwdi0xMGgtNHYxMGgtMTB2NGgxMHYxMGg0di0xMGgxMHoiLz48L3N2Zz4=">
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+</ion-content>
+<ion-footer *ngIf="edit">
+  <button ion-button full clear text-capitalize color="dark" (click)="next()"><b>Next</b></button>
+</ion-footer>

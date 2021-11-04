@@ -1,0 +1,43 @@
+<!--
+  Generated template for the ModalExtraHourPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class=" no-scroll" no-padding no-margin>
+  <div class="img_h no-scroll">
+    <ion-buttons end>
+      <button ion-button icon-only clear color="dark" (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </div>
+  <div padding text-center>
+    <img class="img" [src]="(dataUserModal.foto != null && dataUserModal.foto != undefined)?dataUserModal.foto:'../../assets/imgs/logo.png'" />
+    <h1 ion-text>Hire {{dataUserModal.nombre}} an </h1>
+    <h6 no-margin ion-text color="usingg">extra hour</h6>
+    <ion-grid>
+      <ion-row align-items-center justify-content-center>
+        <ion-col col-12>
+          <p text-uppercase>{{dataUserModal.tipo_paquete}} package</p>
+          <p text-uppercase> + </p>
+          <p text-uppercase>Hora extra</p>
+        </ion-col>
+        <ion-col col-auto text-right [ngSwitch]="dataUserModal.tipo_paquete">
+          <p ion-text *ngSwitchCase="'Basic'">${{dataUserModal.basic}}</p>
+          <p ion-text *ngSwitchCase="'Gold'">${{dataUserModal.gold}}</p>
+          <p ion-text *ngSwitchCase="'Premium'">${{dataUserModal.premium}}</p>
+        </ion-col>
+        <ion-col col-auto offset-2 text-left>
+          <p ion-text>${{costExtra}}</p>
+        </ion-col>
+        <ion-col col-12 class="col-fin">
+          <p ion-text color="using">Total </p>
+          <p ion-text color="usingg">${{total}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <button ion-button full clear text-center color="dark" (click)="pagoHecho()">Pay</button>
+</ion-content>

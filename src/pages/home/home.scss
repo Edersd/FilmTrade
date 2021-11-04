@@ -1,0 +1,43 @@
+page-home {
+  ion-content {
+    background-image: url('../../assets/imgs/Fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .item {
+    background-color: transparent;
+  }
+
+  .vertical-align-content>* {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: 160px;
+  }
+
+  .info-span-control {
+    color: rgb(184, 82, 28);
+    font-size: 12px;
+  }
+
+}
+
+page-menu-home img {
+  width: 160px;
+  height: 160px;
+}
+
+page-menu-home-work img {
+  width: 160px;
+  height: 160px;
+}

@@ -1,0 +1,58 @@
+page-add-project {
+  .card {
+      border-radius: 10px;
+      margin: 0px;
+      width: 100%;
+      box-shadow: 0 1px 0px rgba(0, 0, 0, 0.0);
+  }
+
+  .label-ios[stacked] {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    //font-weight: bold;
+  }
+
+  .ion-iconAdd {
+    font-size: 40px;
+  }
+
+  button{
+      b{
+          font-size: 20px;
+      }
+  }
+
+  .item.item-textarea {
+    height: 100%;
+  }
+
+  .card-content {
+    height: 100%;
+  }
+
+  textarea.text-input {
+    height: 100%;
+  }
+
+  .item.item-block .item-inner {
+    border-bottom: 0.0px solid #c8c7cc;
+  }
+
+  .datetime {
+    width: 100%;
+  }
+
+  ion-select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .imgStart {
+    width: 40px;
+    height: 40px;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+}

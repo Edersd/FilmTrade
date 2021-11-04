@@ -1,0 +1,47 @@
+page-payments {
+  .scroll-content {
+    //border-top: 6px solid rgb(25, 111, 211);
+  }
+
+  .colNav {
+    border-bottom: 6px solid rgb(25, 111, 211);
+  }
+
+  .ion-title {
+    padding: 0 30px;
+    font-size: 30px;
+    color: black;
+  }
+
+  h6 {
+    padding-left: 30px;
+    padding-bottom: 16px;
+    font-size: 13px;
+    margin: auto;
+    font-style: inherit;
+    color: gray;
+  }
+
+  /*   ion-icon {
+    &[class*="appname-"] {
+      // Instead of using the font-based icons
+      // We're applying SVG masks
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 3em;
+      height: 3em;
+    }
+  } */
+
+  ion-select {
+    max-width: 100%;
+  }
+
+  //Centrar el titulo
+  ion-title {
+    text-align: center;
+    padding-right: 15%;
+  }
+}

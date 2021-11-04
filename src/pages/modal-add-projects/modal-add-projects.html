@@ -1,0 +1,40 @@
+<!--
+  Generated template for the ModalAddProjectsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content no-padding no-margin>
+  <div style="height: 22px;">
+    <ion-buttons end>
+      <button ion-button icon-only clear color="dark" (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </div>
+
+  <form [formGroup]="projectForm">
+    <div>
+      <ion-label stacked padding-left>Project name</ion-label>
+      <ion-card no-padding>
+        <ion-card-content no-padding ftext-center>
+          <ion-item>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div>
+      <ion-label stacked padding-left>Description</ion-label>
+      <ion-card no-padding>
+        <ion-card-content no-padding text-center>
+          <ion-item>
+            <ion-textarea formControlName="description"></ion-textarea>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <p ion-text color="usingg" text-center>Terms and conditions</p>
+  </form>
+  <button ion-button full clear text-center color="dark" (click)="addNewProject()">Create</button>
+</ion-content>

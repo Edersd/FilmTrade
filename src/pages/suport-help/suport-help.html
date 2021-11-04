@@ -1,0 +1,81 @@
+<!--
+  Generated template for the SuportHelpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Support and help</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="seccion">
+    <h1 no-margin><b>Support and help</b></h1>
+    <p no-margin>FAQ's</p> 
+  </div>
+
+  <div padding class="list-avatar-page">
+    <ion-list>
+      <ion-item (click)="faq()">
+        <ion-label>
+          FAQ
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="contactF()">
+        <ion-label>
+          Contact FilmTrade
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="aboutF()">
+        <ion-label>
+          About Filmtrade
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="termsF()">
+        <ion-label>
+          Terms and Conditions
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <p padding text-right ion-text color="usingg">Contact <a ion-text color="primary">FilmTrade</a></p>
+</ion-content>
+<ion-footer>
+  <div *ngIf="sesionObject.tipo_usuario == 3">
+    <ion-segment [(ngModel)]="mymodel"> 
+      <ion-segment-button value="segment1" (click)="tabs()">
+        <ion-icon ios="ios-home-outline" md="md-home"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segment2" (click)="tabs()">
+        <ion-icon ios="ios-briefcase-outline" md="md-briefcase"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segment3" (click)="tabs()">
+        <ion-icon ios="ios-search-outline" md="md-search"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segment4" (click)="tabs()">
+        <ion-icon ios="ios-star-half-outline" md="md-star-half"></ion-icon>
+      </ion-segment-button>
+    </ion-segment> 
+  </div>
+  <div *ngIf="sesionObject.tipo_usuario == 2  ">
+    <ion-segment [(ngModel)]="mymodel">
+      <ion-segment-button value="segment1" (click)="tabs()" (ionSelect)="segmentButtonClicked($event)">
+        <ion-icon ios="ios-home-outline" md="md-home"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segment2" (click)="tabs()" (ionSelect)="segmentButtonClicked($event)">
+        <ion-icon ios="ios-briefcase-outline" md="md-briefcase"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segment3" (click)="tabs()">
+        <ion-icon ios="ios-search-outline" md="md-search"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segment4" (click)="tabs()">
+        <ion-icon ios="ios-call-outline" md="md-call"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-footer> 

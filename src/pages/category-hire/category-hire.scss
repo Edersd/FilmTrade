@@ -1,0 +1,19 @@
+page-category-hire {
+  .scroll-content {
+    border-top: 6px solid rgb(25, 111, 211);
+  }
+  ion-card{
+      height: 100px;
+      h1{
+          padding-top: 20px;
+          padding-bottom: 20px;
+          b {
+            color: white;
+          }
+      }
+  }
+
+  ion-title {
+    text-align: center; 
+  }
+}

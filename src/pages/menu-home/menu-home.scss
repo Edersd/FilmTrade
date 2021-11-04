@@ -1,0 +1,49 @@
+page-menu-home {
+  .listperfil {
+    margin: -1px 0 0px;
+    //border-bottom: 2.55px solid #dfdfdf
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  b {
+    font-size: 28px;
+    margin: 0px;
+  }
+
+  a {
+    font-size: 13px;
+    margin: 0px;
+  }
+
+  .item ion-avatar ion-img,
+  .item ion-avatar img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .itemperfil {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .list>.item-block:first-child {
+    border-top: 0.0px solid #c8c7cc;
+  }
+
+  .menu-inner {
+    background: #fff;
+    border-top: 8px solid rgb(25, 111, 211);
+  }
+
+  .plus {
+    background-color: rgb(25, 111, 211);
+    padding: 10%
+  }
+
+}
+
+

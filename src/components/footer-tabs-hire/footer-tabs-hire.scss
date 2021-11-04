@@ -1,0 +1,60 @@
+footer-tabs-hire {
+  .segment-ios .segment-button {
+    flex: 1;
+    width: 0;
+    height: 4.2rem;
+    border-width: 0px;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #488aff;
+    background-color: transparent;
+  }
+
+  .segment-md .segment-button {
+    flex: 1;
+    width: 0;
+    height: 4.2rem;
+    border-width: 0px;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #488aff;
+    background-color: transparent;
+  }
+
+  .segment-ios .segment-button ion-icon {
+    font-size: 3.0rem;
+    margin-top: 5px;
+    line-height: 2.8rem;
+  }
+
+  .segment-md .segment-button ion-icon {
+    font-size: 3.0rem;
+    margin-top: 5px;
+    line-height: 2.8rem;
+  }
+
+  ion-footer {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, .10);
+    background: white;
+  }
+
+  .segment-ios .segment-button.segment-activated {
+    color: #00379d;
+    background-color: #e4e4e4;
+    opacity: 1;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+  }
+
+  .segment-md .segment-button.segment-activated {
+    color: #00379d;
+    background-color: #e4e4e4;
+    opacity: 1;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+  }
+
+  ion-segment {
+    border-top: 1px solid darkgray;
+  }
+}

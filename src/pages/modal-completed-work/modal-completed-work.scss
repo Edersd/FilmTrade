@@ -1,0 +1,86 @@
+page-modal-completed-work {
+  .img_h {
+    background: orange;
+    height: 30%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .img_f {
+    height: 50px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding-bottom: 0px;
+  }
+
+  ion-col {
+    p {
+      font-size: 15px;
+    }
+  }
+
+  p {
+    display: inline;
+    font-size: 10px;
+    padding-top: 0px
+  }
+
+  h1 {
+    //line-height: 150px; //Damos 200px de alto para notar el efectos 
+    font-size: 25px;
+    margin-top: 45px;
+    margin-bottom: 0px;
+  }
+
+  h6 {
+    //line-height: 150px; //Damos 200px de alto para notar el efectos 
+    margin: 0px;
+    font-size: 15px;
+  }
+
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+
+
+  /* Modal */
+  background-color: rgba(0, 0, 0, 0.3);
+
+  ion-content.content {
+    left: calc(50% - (80%/2));
+    top: calc(50% - (50%/2));
+
+    width: 80%;
+    height: 50%;
+    border-radius: 20px;
+
+    .scroll-content {
+      border-radius: 20px;
+      overflow: auto;
+    }
+  }
+
+  @media only screen and (min-height: 768px) and (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+
+  .img {
+    top: 13%;
+    left: 50%;
+    margin-left: -50px;
+    position: absolute;
+    z-index: 999;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 6px solid white;
+  }
+
+  button{
+    font-weight: bold;
+  }
+}

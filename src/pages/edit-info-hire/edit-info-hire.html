@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-toolbar no-padding>
+    <h3 class="ion-title"></h3>
+  </ion-toolbar>
+  <div>
+    <img *ngIf="(sesionObject.photoUri != null && sesionObject.photoUri != undefined)" class="img" (click)="changePhoto(1)"
+      [src]="sesionObject.photoUri">
+    <img *ngIf="(sesionObject.photoUri == null && sesionObject.photoUri == undefined)" (click)="changePhoto(1)" class="plus img"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTBoLTEwdi0xMGgtNHYxMGgtMTB2NGgxMHYxMGg0di0xMGgxMHoiLz48L3N2Zz4=">
+  </div>
+
+  <div padding center center-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 margin-bottom>
+          <ion-item>
+            <ion-label floating>NAME</ion-label>
+            <ion-input type="text" [(ngModel)]="sesionObject.nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>COMPANY</ion-label>
+            <ion-input type="text" [(ngModel)]="sesionObject.compania"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6 center text-center no-padding>
+          <p no-margin>State</p>
+        </ion-col>
+        <ion-col col-6 center text-center no-padding>
+          <p no-margin>Municipality</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label floating> </ion-label>
+            <ion-select (ionChange)="changeState($event)" interface="popover" placeholder="Select one">
+              <ion-option *ngFor="let stateIn of statesList" [value]="stateIn">{{ stateIn.descripcion }}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label floating> </ion-label>
+            <ion-select (ionChange)="changeRegion($event)" interface="popover" placeholder="Select one">
+              <ion-option *ngFor="let region of regionsList" [value]="region">{{ region }}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="editID">
+        <ion-col>
+          <ion-item>
+            <ion-input placeholder="Verify your ID" clearInput></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-1 align-self-center margin-right>
+          <ion-buttons end>
+            <button ion-button icon-only clear>
+              <ion-icon name="camera"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
+      <ion-row no-padding>
+        <ion-col no-padding>
+          <p class="gray">Must*</p>
+        </ion-col>
+      </ion-row>
+      <ion-row justify-content-center>
+        <ion-col align-self-center>
+          <button ion-button full clear color="dark" (click)="updateInfo()"><b>SAVE</b></button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

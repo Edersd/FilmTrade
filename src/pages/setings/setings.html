@@ -1,0 +1,82 @@
+<!--
+  Generated template for the SetingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="seccion">
+    <h1 no-margin><b>Settings</b></h1>
+  </div>
+
+  <div class="list-avatar-page">
+    <ion-list>
+      <ion-item text-uppercase>
+        <ion-toggle checked="true"></ion-toggle>
+        <ion-label>
+          Notifications
+        </ion-label>
+      </ion-item>
+      <ion-item text-uppercase (click)="ratePayments()" *ngIf="sesionObject.tipo_usuario==2">
+        <ion-label>
+          Rate and payments
+        </ion-label>
+      </ion-item>
+      <ion-item text-uppercase (click)="linkAccounts()" *ngIf="sesionObject.tipo_usuario==3">
+        <ion-label>
+          Link accounts
+        </ion-label>
+      </ion-item>
+      <ion-item text-uppercase (click)="idVerification()">
+        <ion-label>
+          Id verification
+        </ion-label>
+      </ion-item>
+      <ion-item text-uppercase (click)="supportHelp()">
+        <ion-label>
+          Support and help
+        </ion-label>
+      </ion-item>
+      <!-- 
+        <ion-item text-uppercase (click)="aboutFT()">
+        <ion-label>
+          About filmtrade
+        </ion-label>
+      </ion-item>
+      -->
+      <!-- <ion-item text-uppercase (click)="logout()">
+        <ion-label>
+          Log out
+        </ion-label>
+      </ion-item> -->
+      <ion-item (click)="delete()" text-uppercase>
+        <button menuClose ion-item style="color:red">
+          Delete account
+        </button>
+      </ion-item>
+      <!--
+      <ion-item text-uppercase>
+        <ion-label style="color:red">
+          Delete account
+        </ion-label>
+      </ion-item>
+      -->
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <footer-tabs *ngIf="sesionObject.tipo_usuario==2"></footer-tabs>
+  <footer-tabs-hire *ngIf="sesionObject.tipo_usuario==3"></footer-tabs-hire>
+</ion-footer>

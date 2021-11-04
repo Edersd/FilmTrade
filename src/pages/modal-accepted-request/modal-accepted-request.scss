@@ -1,0 +1,87 @@
+page-modal-accepted-request {
+  .img_h {
+    background: orange;
+    height: 35%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .img_f {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+
+  p {
+    font-size: 20px;
+    margin: 0px;
+    padding-top: 0px
+  }
+
+  h1 {
+    //line-height: 150px; //Damos 200px de alto para notar el efectos 
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  h6 {
+    //line-height: 150px; //Damos 200px de alto para notar el efectos 
+    margin: 0px;
+    font-size: 15px;
+  }
+
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+
+
+  /* Modal */
+  background-color: rgba(0, 0, 0, 0.3);
+
+  ion-content.content {
+    left: calc(50% - (80%/2));
+    top: calc(50% - (45%/2));
+
+    width: 80%;
+    height: 45%;
+    border-radius: 20px;
+
+    .scroll-content {
+      border-radius: 20px;
+      overflow: auto;
+    }
+  }
+
+  @media only screen and (min-height: 768px) and (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+
+  .img {
+    top: 15%;
+    left: 50%;
+    margin-left: -50px;
+    position: absolute;
+    z-index: 999;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 4px solid white;
+  }
+
+  button {
+    font-weight: bold;
+  }
+
+  .textImg {
+    top: 15px;
+    left: 50%;
+    margin-left: -45px;
+    position: absolute;
+    z-index: 999;
+    color: white;
+  }
+}

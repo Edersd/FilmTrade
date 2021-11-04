@@ -1,0 +1,80 @@
+page-perfil-work-hire {
+  .seccion {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background: orange;
+  }
+
+  .img {
+    background: white;
+    top: 45px;
+    left: 50%;
+    margin-left: -50px;
+    position: absolute;
+    z-index: 999;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border: 4px solid white;
+  }
+
+  .grid {
+    padding-top: 33px;
+
+    h1 {
+      margin-top: 0px;
+      font-size: 40px;
+
+    }
+
+    p {
+      color: gray;
+      margin: 0px;
+
+      b {
+        color: orange;
+        font-size: 23px;
+        margin: 0px;
+      }
+    }
+
+    .imgStart {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  ion-note {
+    font-size: 14px;
+    align-self: flex-start;
+  }
+
+  ion-slide.swiper-slide {
+    left: 25%;
+  }
+
+  .thumb-img {
+    padding: 4px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ion-iconAdd {
+    font-size: 40px;
+  }
+
+  ion-title {
+    text-align: center;
+    padding-right: 15%;
+  }
+
+  ion-calendar-month .primary button.days-btn small, ion-calendar-month .primary .days .marked p, ion-calendar-month .primary .days .today p {
+    color: #488aff;
+    font-size: 0.66em;
+  }
+
+}

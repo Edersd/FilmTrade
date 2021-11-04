@@ -1,0 +1,71 @@
+<ion-content padding center center-text class="vertical-align-content">
+  <ion-list>
+    <img src="../../assets/imgs/logo.png" alt="ft" center />
+    <form [formGroup]="loginForm">
+      <ion-item>
+        <ion-label floating>EMAIL</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <span
+        *ngIf="
+          loginForm.controls.email.hasError('required') &&
+          loginForm.controls.email.touched
+        "
+        class="info-span-control"
+        >This is required</span
+      >
+      <span
+        *ngIf="
+          loginForm.controls.email.hasError('email') &&
+          loginForm.controls.email.touched &&
+          !loginForm.controls.email.hasError('required')
+        "
+        class="info-span-control"
+        >Is not an email</span
+      >
+      <ion-item>
+        <ion-label floating>PASSWORD </ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <span
+        *ngIf="
+          loginForm.controls.password.hasError('required') &&
+          loginForm.controls.password.touched
+        "
+        class="info-span-control"
+        >This is required</span
+      >
+    </form>
+    <button ion-button full clear (click)="login()">ENTER</button>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col col-5 align-self-center>
+        Don't have an account?
+      </ion-col>
+      <ion-col col-3 align-self-center>
+        <button ion-button round small (click)="register()" text-lowercase>
+          Create one.
+        </button>
+      </ion-col>
+      <ion-col col-12 align-self-center>
+        <button
+          ion-button
+          icon-end
+          clear
+          full
+          color="dark"
+          (click)="loginWithFacebook()"
+        >
+          Login with Facebook
+          <ion-icon
+            color="primary"
+            name="logo-facebook"
+            text-lowercase
+          ></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

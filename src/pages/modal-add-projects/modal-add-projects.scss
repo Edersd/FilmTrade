@@ -1,0 +1,70 @@
+page-modal-add-projects {
+  /* Modal */
+  background-color: rgba(0, 0, 0, 0.3);
+
+  ion-content.content {
+    left: calc(50% - (80%/2));
+    top: calc(50% - (50%/2));
+
+    width: 80%;
+    height: 53%;
+    border-radius: 20px;
+
+    .scroll-content {
+      border-radius: 20px;
+      overflow: auto;
+    }
+  }
+
+  @media only screen and (min-height: 768px) and (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+
+  /* Card */
+  ion-content {
+    font-size: 40px;
+  }
+
+  .card {
+    border-top: 10px;
+    border-radius: 10px;
+    margin: 0px;
+    width: 100%;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.0);
+    background: transparent;
+  }
+
+  ion-textarea {
+    height: 150px;
+    background: rgb(243, 243, 243);
+    border-radius: 15px;
+    height: 150px;
+    padding: 10px;
+  }
+  ion-input{
+      background: rgb(243, 243, 243);
+      border-radius: 15px;
+      padding: 5px;
+  }
+
+  .item.item-textarea {
+    height: 100%;
+  }
+
+  .card-content {
+    height: 100%;
+  }
+
+  textarea.text-input {
+    height: 100%;
+  }
+
+  button {
+    font-weight: bold;
+  }
+
+  p{
+      font-size: 10px;
+  }
+}

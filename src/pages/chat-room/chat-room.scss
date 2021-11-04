@@ -1,0 +1,30 @@
+page-chat-room {
+  background-color: gray;
+  .userNameChat {
+    color: #474747;
+    display: block;
+    font-size: small !important;
+  }
+  .message {
+    padding: 10px !important;
+    transition: all 250ms ease-in-out !important;
+    border-radius: 10px !important;
+    margin-bottom: 4px !important;
+  }
+  .myMessage {
+    background: #dcdcdc !important;
+    color: #000 !important;
+  }
+  .otherMessage {
+    background: #c9c7c7 !important;
+    color: #000 !important;
+  }
+  .time {
+    color: #696363;
+    float: right;
+    font-size: small;
+  }
+  row {
+    background-color: #474747;
+  }
+}

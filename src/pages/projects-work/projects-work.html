@@ -1,0 +1,127 @@
+<!--
+  Generated template for the ProjectsWorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Projects</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="seccion">
+    <h1 no-margin><b>Your projects</b></h1>
+    <p no-margin>Check the status and details of your projects</p>
+  </div>
+  <!-- <button ion-button full (click)="addProject()">Create a new project</button> -->
+  <div class="list-avatar-page" *ngIf="projectsCreated.proyectos != null">
+    <ion-list *ngFor="let project of projectsCreated.proyectos; let i = index" (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <ion-item style="margin-top: 10px">
+        <ion-label>
+          <strong>
+            <h2>{{ project.nombre }}</h2>
+          </strong>
+          <p>CREATED {{ project.Fecha_Creacion}} | {{ project.user.nombre}}</p><br>
+        </ion-label>
+        <button ion-button large clear item-end style="margin: 0px 0px 0px 0px;" (click)="desplegarUsuarios(i)">
+          <ion-icon [name]="(isGroupShown(i)) ? 'arrow-down' : 'arrow-forward'"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="isGroupShown(i)">
+        <ion-list *ngFor="let user of project.user; let j = index">
+          <ion-item>
+            <ion-avatar item-start>
+              <img [src]="user.foto">
+            </ion-avatar>
+            <h6><b>{{ user.nombre }}</b></h6>
+            <p text-uppercase>{{ user.compania }}</p>
+            <ion-note item-end>
+              <ion-icon color="using" ios="ios-heart-outline" md="md-heart-outline"></ion-icon>
+            </ion-note>
+            <ion-note item-end>
+              <ion-icon name='star'></ion-icon>
+            </ion-note>
+            <ion-note item-end>{{ user.calificacion }}</ion-note>
+          </ion-item>
+
+          <ion-item style="padding-left: 80px;" text-wrap class="iconos" *ngIf="isGroupShown(i)">
+            <ion-grid>
+              <ion-row justify-content-start>
+                <ion-col col-1>
+                  <div>
+                    <ion-icon ios="ios-card-outline" md="md-card"></ion-icon><br>
+                  </div>
+                </ion-col>
+                <ion-col padding-left>
+                  <p ion-text color="dark">{{ user.paquetes }}</p>
+                  <ion-row justify-content-between>
+                    <ion-col col-4 style="padding: 0px;">
+                      <p ion-text color="using" style="font-size: 0.6em;">+ extra hour</p>
+                    </ion-col>
+                    <ion-col col-4 style="padding: 0px;">
+                      <p ion-text color="dark" style="font-size: 0.6em;">Total: ${{user.costo}}</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+              <ion-row justify-content-start>
+                <ion-col col-1>
+                  <div>
+                    <ion-icon ios="ios-alarm-outline" md="md-alarm"></ion-icon><br>
+                  </div>
+                </ion-col>
+                <ion-col padding-left>
+                  <h6 ion-text color="{{(user.status_work == 'En proceso')?'proceso':((user.status_work == 'Cancelado')?'cancelado':((user.status_work == 'Finalizado')?'finalizado':'agendado'))}}">
+                    <div [ngSwitch]="user.status_work">
+                      <h6 *ngSwitchCase="'En proceso'"> In process</h6>
+                      <h6 *ngSwitchCase="'Agendado'">Scheduled</h6>
+                      <h6 *ngSwitchCase="'Finalizado'">Finished</h6>
+                      <h6 *ngSwitchCase="'Cancelado'">Cancelled</h6>
+                    </div>
+                  </h6>
+                  <ion-row justify-content-between>
+                    <ion-col col-4 style="font-size: 0.6em; padding: 0px;">
+                      <p><a ion-text color="usingg">{{user.fecha_work}}</a></p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+              <ion-row justify-content-start>
+                <ion-col col-1>
+                  <div>
+                    <ion-icon ios="ios-chatbubbles-outline" md="md-chatbubbles"></ion-icon><br>
+                  </div>
+                </ion-col>
+                <ion-col padding-left>
+                  <button   (click)="openChat()" style="background: white; color:black; font-size: 15px; outline-style: none;">Open Chat</button>
+                  <ion-row justify-content-between>
+                    <ion-col col-11 style="font-size: 0.6em; padding: 0px;">
+                      <p><a ion-text color="usingg">This chat will be deleted when the project is over</a></p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+    <div text-center>
+      <p ion-text color="dark">*La hora extra tiene un cargo extra del 10% del paquete adquirido</p>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <footer-tabs></footer-tabs>
+</ion-footer>

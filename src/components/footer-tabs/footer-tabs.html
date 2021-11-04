@@ -1,0 +1,17 @@
+<!-- Generated template for the FooterTabsComponent component -->
+<div>
+  <ion-segment [(ngModel)]="mymodel">
+    <ion-segment-button value="segment1" (click)="tabs()" (ionSelect)="segmentButtonClicked($event)">
+      <ion-icon ios="ios-home-outline" md="md-home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="segment2" (click)="tabs()" (ionSelect)="segmentButtonClicked($event)">
+      <ion-icon ios="ios-briefcase-outline" md="md-briefcase"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="segment3" (click)="tabs()">
+      <ion-icon ios="ios-search-outline" md="md-search"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="segment4" (click)="tabs()">
+      <ion-icon ios="ios-call-outline" md="md-call"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</div>

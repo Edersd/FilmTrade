@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="seccion">
+    <h1 no-margin><b>Notifications</b></h1>
+    <p no-margin>Check on the artist that accepted your invitation</p>
+  </div>
+
+  <div class="list-avatar-page">
+    <ion-list *ngIf="notifications != null || notifications != undefined">
+      <ion-item-sliding *ngFor="let notification of notifications; let i = index">
+        <ion-item>
+          <ion-avatar item-start (click)="viewModal(notification)">
+            <img [src]="notification.foto">
+          </ion-avatar>
+          <div (click)="viewModal(notification)">
+            <h6><b>{{ notification.nombre }}</b></h6>
+            <p text-uppercase>{{ notification.ocupation }} |</p>
+            <p text-uppercase>{{ notification.nom_proyecto }}</p>
+            <div [ngSwitch]="notification.status">
+              <h6 text-uppercase ion-text style="display: block;font-size: 8px" color="{{(notification.status == 'En proceso')?'proceso':((notification.status == 'Cancelado')?'cancelado':((notification.status == 'Finalizado')?'finalizado':'agendado'))}}" *ngSwitchCase="'En proceso'"> In process</h6>
+              <h6 text-uppercase ion-text style="display: block;font-size: 8px" color="{{(notification.status == 'En proceso')?'proceso':((notification.status == 'Cancelado')?'cancelado':((notification.status == 'Finalizado')?'finalizado':'agendado'))}}" *ngSwitchCase="'Agendado'">Scheduled</h6>
+              <h6 text-uppercase ion-text style="display: block;font-size: 8px" color="{{(notification.status == 'En proceso')?'proceso':((notification.status == 'Cancelado')?'cancelado':((notification.status == 'Finalizado')?'finalizado':'agendado'))}}" *ngSwitchCase="'Finalizado'">Finished</h6>
+              <h6 text-uppercase ion-text style="display: block;font-size: 8px" color="{{(notification.status == 'En proceso')?'proceso':((notification.status == 'Cancelado')?'cancelado':((notification.status == 'Finalizado')?'finalizado':'agendado'))}}" *ngSwitchCase="'Cancelado'">Cancelled</h6>
+            </div>
+          </div>
+          <!-- [ngStyle]=\"{'color':index < this.Math.round(this.parseFloat(rating)) ? activeColor : defaultColor }\" name=\"{{index <this.Math.round(this.parseFloat(rating)) ? activeIcon : defaultIcon}} -->
+          <ion-note item-end>
+            <ion-icon (click)="addFavoritos(i,notification)" color="{{(notification.ocupation == 'Photographer')?'photographer':((notification.ocupation == 'Videographer')?'videographer':((notification.ocupation == 'Hair')?'makeup':'talent'))}}"
+              [name]="notifications[i].enable ? 'heart' : 'heart-outline'"></ion-icon>
+          </ion-note>
+          <ion-note item-end>
+            <ion-icon name='star' color="proceso"></ion-icon>
+          </ion-note>
+          <ion-note item-end>{{ notification.calificacion }}</ion-note>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button (click)="delete(i,notification)" color="danger">
+            <ion-icon name="md-close"></ion-icon>
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button (click)="delete(i,notification)" color="danger">
+            <ion-icon name="md-close"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <p style="font-size: 15px; color: #dddddd; text-align: center; padding-left: 5%; padding-right: 5%">After 24 hrs without response your notifications will be deleted</p>
+</ion-content>
+<ion-footer>
+  <footer-tabs-hire></footer-tabs-hire>
+</ion-footer>

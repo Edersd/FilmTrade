@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Favorites</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  
+  <div class="seccion">
+    <h1 no-margin><b>Favorites</b></h1>
+    <p no-margin>Hire again your favorite artists</p>
+  </div>
+
+  <div class="list-avatar-page">
+    <ion-list>
+      <ion-item *ngFor="let list of listFavorites; let i = index">
+        <ion-avatar item-start>
+          <img [src]="list.foto">
+        </ion-avatar>
+        <h6><b>{{ list.nombre }}</b></h6>
+        <p text-uppercase *ngIf="list.ocupation != null">{{ list.ocupation }} |</p>
+        <p text-uppercase *ngIf="list.compania != null">{{ list.compania }} |</p>
+        <p text-uppercase>{{ list.estado }}</p>
+        <ion-note item-end>
+          <ion-icon (click)="addFavoritos(i,list)" color="{{(list.ocupation == 'Photographer')?'photographer':((list.ocupation == 'Videographer')?'videographer':((list.ocupation == 'Hair')?'makeup':'talent'))}}"
+            [name]="listFavorites[i].enable ? 'heart' : 'heart-outline'"></ion-icon>
+        </ion-note>
+        <ion-note item-end>
+          <ion-icon name='star'></ion-icon>
+        </ion-note>
+        <ion-note item-end>{{ list.calificacion }}</ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <footer-tabs-hire></footer-tabs-hire>  
+</ion-footer>
